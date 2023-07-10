@@ -38,7 +38,7 @@ def main():
     st.title("LangChain Document Search")
 
     # Load the PDF document
-    document = load_document("data/SASW-Code-of-Professional-Ethics-3rd-Revision-online.pdf")
+    document = load_document("SASW-Code-of-Professional-Ethics-3rd-Revision-online.pdf")
     index = create_index(document)
 
     # Query input
