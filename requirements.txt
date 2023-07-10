@@ -1,3 +1,4 @@
 streamlit
 langchain
-pypdf
+sentence_transformers
+chromadb
