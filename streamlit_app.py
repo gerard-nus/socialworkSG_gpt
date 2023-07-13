@@ -3,7 +3,7 @@ from langchain.document_loaders import PyPDFLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.embeddings import HuggingFaceHubEmbeddings
 
 # Add a title and description for your app
 st.set_page_config(
@@ -18,8 +18,10 @@ def load_document(file_path):
     return loader
 
 def create_index(loader):
-    model_name = "sentence-transformers/all-mpnet-base-v2"
-    embeddings = HuggingFaceEmbeddings(model_name=model_name)
+    model_name = "google/flan-t5-xl"
+    embeddings = HuggingFaceHubEmbeddings(
+        #model_name=model_name
+        )
 
     index_creator = VectorstoreIndexCreator(
         vectorstore_cls=Chroma,
