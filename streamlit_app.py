@@ -5,6 +5,9 @@ from langchain.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import HuggingFaceHubEmbeddings
 
+import os
+token = os.environ.get('HUGGINGFACEHUB_API_TOKEN')
+
 # Add a title and description for your app
 st.set_page_config(
     page_title="SocialWorkSG_GPT",
@@ -20,6 +23,7 @@ def load_document(file_path):
 def create_index(loader):
     model_name = "google/flan-t5-xl"
     embeddings = HuggingFaceHubEmbeddings(
+        huggingfacehub_api_token=token
         #model_name=model_name
         )
 
