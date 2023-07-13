@@ -6,7 +6,15 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import HuggingFaceHubEmbeddings
 
 import os
-token = os.environ.get('HUGGINGFACEHUB_API_TOKEN')
+
+import os
+
+st.write(
+    "Has environment variables been set:",
+    os.environ["db_password"] == st.secrets["db_password"],
+)
+
+#token = os.environ.get('HUGGINGFACEHUB_API_TOKEN')
 
 # Add a title and description for your app
 st.set_page_config(
