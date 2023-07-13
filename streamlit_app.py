@@ -34,7 +34,7 @@ def load_document(file_path):
 def create_index(loader):
     model_name = "google/flan-t5-xl"
     embeddings = HuggingFaceHubEmbeddings(
-        huggingfacehub_api_token=token
+        huggingfacehub_api_token=st.secrets.db_credentials.db_password
         #model_name=model_name
         )
 
