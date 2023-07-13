@@ -1,11 +1,20 @@
 import streamlit as st
+
+# Add a title and description for your app
+st.set_page_config(
+    page_title="SocialWorkSG_GPT",
+    page_icon=":mag:",
+    layout="centered",
+    initial_sidebar_state="auto"
+)
+
+
 from langchain.document_loaders import PyPDFLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import HuggingFaceHubEmbeddings
 
-import os
 
 import os
 
@@ -16,13 +25,7 @@ st.write(
 
 #token = os.environ.get('HUGGINGFACEHUB_API_TOKEN')
 
-# Add a title and description for your app
-st.set_page_config(
-    page_title="SocialWorkSG_GPT",
-    page_icon=":mag:",
-    layout="centered",
-    initial_sidebar_state="auto"
-)
+
 
 def load_document(file_path):
     loader = PyPDFLoader(file_path)
